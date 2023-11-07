@@ -15,7 +15,7 @@ data['day_of_year'] = data['time'].dt.dayofyear
 
 # Categorize the weather parameters
 data['temperature'] = pd.cut(data['temperature'], bins=[-np.inf, 10, 25, np.inf], labels=['Cold', 'Mild', 'Hot'])
-data['relativehumidity'] = pd.cut(data['relativehumidity'], bins=[0, 30, 70, 100], labels=['Low', 'Medium', 'High'])
+data['relativehumidity'] = pd.cut(data['relativehumidity'], bins=[0, 50, 100], labels=['Low', 'High'])
 data['precipitation'] = pd.cut(data['precipitation'], bins=[0, 1, np.inf], labels=['None', 'Yes'])
 data['cloudcover'] = pd.cut(data['cloudcover'], bins=[0, 30, 100], labels=['Clear', 'Cloudy'])
 data['windspeed'] = pd.cut(data['windspeed'], bins=[0, 15, np.inf], labels=['Calm', 'Windy'])
